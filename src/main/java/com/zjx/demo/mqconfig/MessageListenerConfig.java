@@ -1,4 +1,4 @@
-package com.zjx.demo.config;
+package com.zjx.demo.mqconfig;
 
 import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author: create by zhangjianxun
  * @version: v1.0
- * @description: com.zjx.demo.config
+ * @description: com.zjx.demo.mqconfig
  * @date:2020/6/8
  **/
 @Configuration

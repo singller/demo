@@ -1,4 +1,4 @@
-package com.zjx.demo.config;
+package com.zjx.demo.mqconfig;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * @author: create by zhangjianxun
  * @version: v1.0 消息发送者
- * @description: com.zjx.demo.config
+ * @description: com.zjx.demo.mqconfig
  * @date:2020/6/5
  **/
 @Component

@@ -1,4 +1,4 @@
-package com.zjx.demo.config;
+package com.zjx.demo.mqconfig;
 
 import com.rabbitmq.client.Channel;
 import org.springframework.amqp.core.AcknowledgeMode;
@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * @author: create by zhangjianxun
  * @version: v1.0
- * @description: com.zjx.demo.config
+ * @description: com.zjx.demo.mqconfig
  * @date:2020/6/8
  **/
 @Component

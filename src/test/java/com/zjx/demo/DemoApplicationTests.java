@@ -1,7 +1,7 @@
 package com.zjx.demo;
 
-import com.zjx.demo.config.Customer;
-import com.zjx.demo.config.Producer;
+import com.zjx.demo.mqconfig.Customer;
+import com.zjx.demo.mqconfig.Producer;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

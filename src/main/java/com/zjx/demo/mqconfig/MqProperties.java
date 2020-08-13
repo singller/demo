@@ -1,4 +1,4 @@
-package com.zjx.demo.config;
+package com.zjx.demo.mqconfig;
 
 public interface MqProperties {
 
