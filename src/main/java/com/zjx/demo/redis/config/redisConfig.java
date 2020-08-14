@@ -28,7 +28,7 @@ public class redisConfig {
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory factory) {
 
-        log.debug("redis序列化配置开始");
+        log.info("redis序列化配置开始");
 
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);
@@ -39,7 +39,7 @@ public class redisConfig {
         template.setDefaultSerializer(serializer);
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashValueSerializer(serializer);
-        log.debug("redis序列化配置结束");
+        log.info("redis序列化配置结束");
         return template;
 
     }

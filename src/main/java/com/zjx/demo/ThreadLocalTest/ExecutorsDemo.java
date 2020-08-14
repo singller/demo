@@ -21,8 +21,9 @@ public class ExecutorsDemo {
     private static ExecutorService threadPool =new ThreadPoolExecutor(5,200,20,TimeUnit.SECONDS,
             new LinkedBlockingQueue<Runnable>(200),nameThread,new ThreadPoolExecutor.AbortPolicy());
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         for(int i=0;i<Integer.MAX_VALUE;i++){
+            Thread.sleep(1000);
             threadPool.execute(new SubThread());
         }
     }
@@ -37,7 +38,7 @@ class SubThread implements Runnable {
     public void run() {
         try {
             System.out.println(i.incrementAndGet());
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             //do nothing
         }

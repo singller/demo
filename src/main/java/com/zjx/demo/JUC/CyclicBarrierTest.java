@@ -32,11 +32,13 @@ public class CyclicBarrierTest {
         Runner runner1 = new Runner(barrier,"张三");
         Runner runner2 = new Runner(barrier,"李四");
         Runner runner3 = new Runner(barrier,"王五");
+        Runner runner4 = new Runner(barrier,"zhao6");
 
         ExecutorService service = Executors.newFixedThreadPool(3);
         service.execute(runner1);
         service.execute(runner2);
         service.execute(runner3);
+        service.execute(runner4);
 
         service.shutdown();
     }

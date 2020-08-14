@@ -70,10 +70,21 @@
             <version>3.3.0</version>
         </dependency>
 
+<!--        <dependency>-->
+<!--            <groupId>io.netty</groupId>-->
+<!--            <artifactId>netty-all</artifactId>-->
+<!--            <version>4.1.6.Final</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.corundumstudio.socketio</groupId>-->
+<!--            <artifactId>netty-socketio</artifactId>-->
+<!--            <version>1.7.17</version>-->
+<!--        </dependency>-->
+
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.6.Final</version>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.12.4</version>
         </dependency>
 
         <dependency>

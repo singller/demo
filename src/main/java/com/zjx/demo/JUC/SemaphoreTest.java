@@ -20,7 +20,7 @@ public class SemaphoreTest {
 
         ExecutorService executorService = Executors.newFixedThreadPool(count);
 
-        Semaphore semaphore = new Semaphore(5);
+        Semaphore semaphore = new Semaphore(5,false);
 
         Random random = new Random();
         for (int i = 0; i < count; i++) {
@@ -33,7 +33,7 @@ public class SemaphoreTest {
                         semaphore.acquire();
                         System.out.println(no +":号车可通行");
                         //模拟车辆通行耗时
-                        Thread.sleep(1000);
+                        Thread.sleep(2000);
                         //释放许可
                         System.out.println();
                         semaphore.release();
