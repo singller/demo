@@ -3,6 +3,7 @@ package com.zjx.demo.JUC;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author: create by zhangjianxun
@@ -14,7 +15,12 @@ public class CountDownTest {
 
     static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    volatile int i =10;
+    static AtomicInteger integer = new AtomicInteger(0);
+
     public static void main(String[] args) throws InterruptedException {
+
+        integer.incrementAndGet();
         CountDownLatch latch = new CountDownLatch(2);
         Worker worker1 = new Worker("张三",2000,latch);
         Worker worker2 = new Worker("李四",3000,latch);
