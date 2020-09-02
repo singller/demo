@@ -1,5 +1,6 @@
 package com.zjx.demo.mqconfig;
 
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**

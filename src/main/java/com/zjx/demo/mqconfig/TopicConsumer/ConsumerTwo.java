@@ -15,6 +15,7 @@ public class ConsumerTwo {
 
     @RabbitListener(queues = MqProperties.TOPIC_TWO_QUEUE)
     public void process(String hello) {
+
         System.out.println("Receiver Topic Two : " + hello);
     }
 }

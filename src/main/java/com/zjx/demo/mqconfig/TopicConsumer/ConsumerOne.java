@@ -13,8 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class ConsumerOne {
 
-    @RabbitListener(queues = MqProperties.TOPIC_ONE_QUEUE)
+    @RabbitListener(queues = MqProperties.TOPIC_ONE_QUEUE )
     public void process(String hello) {
+
+
         System.out.println("Receiver Topic One : " + hello);
     }
 }
