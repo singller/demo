@@ -41,10 +41,12 @@ public class NIOServer {
 
                             if (key.isAcceptable()) {
                                 try {
+
                                     // (1) 每来一个新连接，不需要创建一个线程，而是直接注册到clientSelector
                                     SocketChannel clientChannel = ((ServerSocketChannel) key.channel()).accept();
                                     clientChannel.configureBlocking(false);
                                     clientChannel.register(clientSelector, SelectionKey.OP_READ);
+                                    System.out.println("新的链接:"+clientChannel.hashCode());
                                 } finally {
                                     keyIterator.remove();
                                 }
@@ -76,6 +78,7 @@ public class NIOServer {
                                     ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
                                     // (3) 读取数据以块为单位批量读取
                                     clientChannel.read(byteBuffer);
+                                    //将buffer转换，读写切换
                                     byteBuffer.flip();
                                     System.out.println(Charset.defaultCharset().newDecoder().decode(byteBuffer)
                                             .toString());
