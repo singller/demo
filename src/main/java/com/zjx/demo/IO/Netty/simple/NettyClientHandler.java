@@ -15,7 +15,7 @@ import io.netty.util.CharsetUtil;
 public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 
 
-    //读取客户端发送的消息
+    //读取服务端发送的消息
     /*
         当客户端有读事件就会触发该方法
      */
@@ -29,8 +29,6 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
     }
 
     //当通道就绪就会触发该方法
-
-
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("client ctx" + ctx);
