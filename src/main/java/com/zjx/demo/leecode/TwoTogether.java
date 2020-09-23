@@ -1,5 +1,7 @@
 package com.zjx.demo.leecode;
 
+import java.util.LinkedList;
+
 /**
  * @author: create by zhangjianxun
  * @version: v1.0
@@ -20,8 +22,17 @@ package com.zjx.demo.leecode;
  **/
 public class TwoTogether {
 
+    public static void main(String[] args) {
+        int i =13;
+        int j = i / 10;
+        int o = i % 10;
+        System.out.println(j);
+        System.out.println(o);
+    }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
+        //
         ListNode node = new ListNode(0);
         ListNode p = l1,q = l2, curr =node;
         int carry = 0;
@@ -42,5 +53,34 @@ public class TwoTogether {
         }
         return node.next;
     }
+
+
+    public ListNode getSumLindNode(ListNode l1,ListNode l2){
+
+        //定义接受最终的node
+        ListNode node = new ListNode(0);
+        //定义接收l1 l2的临时变量 跟总变量
+        ListNode p =l1,q = l2 ,curr = node;
+        //定义接收加法的多进位值
+        int carry = 0;
+        //遍历判断 p q 两个链表
+        while (p!=null || q!=null){
+            int i = p != null ? p.val : 0;
+            int j = q != null ? q.val : 0;
+            int sum = i + j +carry;
+            carry = sum/10;
+            curr.next = new ListNode(sum % 10);
+            curr = curr.next;
+            if(p!= null)p = p.next;
+            if(q!= null)q = q.next;
+        }
+        if(carry>0){
+            curr.next = new ListNode(carry);
+        }
+        return node.next;
+    }
+
+
+
 
 }

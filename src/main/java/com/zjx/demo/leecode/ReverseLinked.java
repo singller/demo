@@ -26,8 +26,8 @@ public class ReverseLinked {
         node4.next = node5;
         node5.next = null;
 
-        ListNode reverseList1 = reverseList1(node1);
-        System.out.println(reverseList1.val);
+//        ListNode reverseList1 = reverseList1(node1);
+////        System.out.println(reverseList1.val);
 
         ListNode reverseList2 = reverseList2(node1);
         System.out.println(reverseList2.val);
@@ -51,13 +51,13 @@ public class ReverseLinked {
      * 遍历链表移动
      * */
     public static ListNode reverseList2(ListNode head) {
-        ListNode pre = null;
+        ListNode pre =null;
         ListNode curr = head;
-        while (null != curr) {
+        while (curr != null){
             ListNode next = curr.next;
-            curr.next = pre;  //反转
-
-            //向后传递  三人行
+            //反转链表
+            curr.next = pre;
+            //三人行
             pre = curr;
             curr = next;
         }
