@@ -46,7 +46,7 @@ package com.zjx.demo.leecode;
 public class CountAndSay {
 
     public static void main(String[] args) {
-        solution(4);
+        System.out.println(solution(4));
     }
 
     public static String solution(int n){
