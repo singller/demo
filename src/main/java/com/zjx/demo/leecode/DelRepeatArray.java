@@ -25,11 +25,16 @@ package com.zjx.demo.leecode;
  *
  **/
 public class DelRepeatArray {
+    public static void main(String[] args) {
+        int [] nums ={0,0,1,1,1,2,2,3,3,4};
+        int i = removeDuplicates(nums);
+        System.out.println(i);
+    }
 
     /*
     * 双指针法
     * */
-    public int removeDuplicates(int[] nums) {
+    public static int removeDuplicates(int[] nums) {
 
         if(nums.length == 0 ) return 0;
         //先遍历循环数组
