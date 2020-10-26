@@ -1,9 +1,9 @@
-package com.zjx.demo.leecode;
+package com.zjx.demo.leecode.linkedNode;
 
 /**
  * @author: create by zhangjianxun
  * @version: v1.0
- * @description: com.zjx.demo.leecode
+ * @description: com.zjx.demo.leecode    虚拟节点
  * <p>
  * 两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
  * 输入：1->2->4, 1->3->4

@@ -1,4 +1,4 @@
-package com.zjx.demo.leecode;
+package com.zjx.demo.leecode.array;
 
 /**
  * @author: create by zhangjianxun

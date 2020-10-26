@@ -1,7 +1,4 @@
-package com.zjx.demo.leecode;
-
-import java.util.LinkedList;
-import java.util.List;
+package com.zjx.demo.leecode.linkedNode;
 
 /**
  * @author: create by zhangjianxun
