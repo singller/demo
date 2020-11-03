@@ -3,29 +3,26 @@ package com.zjx.demo.elasticsearch.controller;
 import com.zjx.demo.elasticsearch.dao.BlogRepository;
 import com.zjx.demo.elasticsearch.dto.BlogModel;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
 
 /**
- * @author: create by zhangjianxun
- * @version: v1.0
- * @description: com.zjx.demo.elasticsearch.controller
- * @date:2020/10/27
- **/
+ * @author Flash
+ */
 @RestController
 @RequestMapping("/blog")
 public class BlogController {
 
-    @Autowired
-    private BlogRepository blogRepository;
+    private final BlogRepository blogRepository;
+
+    public BlogController(BlogRepository blogRepository) {
+        this.blogRepository = blogRepository;
+    }
 
 
     @PostMapping("/add")
@@ -37,8 +34,9 @@ public class BlogController {
 
     @GetMapping("/get/{id}")
     public Result getById(@PathVariable String id) {
-        if (StringUtils.isEmpty(id))
+        if (StringUtils.isEmpty(id)){
             return Result.error();
+        }
         Optional<BlogModel> blogModelOptional = blogRepository.findById(id);
         if (blogModelOptional.isPresent()) {
             BlogModel blogModel = blogModelOptional.get();
@@ -59,8 +57,9 @@ public class BlogController {
     @PostMapping("/update")
     public Result updateById(@RequestBody BlogModel blogModel) {
         String id = blogModel.getId();
-        if (StringUtils.isEmpty(id))
+        if (StringUtils.isEmpty(id)){
             return Result.error();
+        }
         blogRepository.save(blogModel);
         return Result.success();
     }
@@ -68,8 +67,9 @@ public class BlogController {
 
     @DeleteMapping("/delete/{id}")
     public Result deleteById(@PathVariable String id) {
-        if (StringUtils.isEmpty(id))
+        if (StringUtils.isEmpty(id)){
             return Result.error();
+        }
         blogRepository.deleteById(id);
         return Result.success();
     }
@@ -77,15 +77,17 @@ public class BlogController {
 
     @GetMapping("/rep/search/title")
     public Result repSearchTitle(String keyword) {
-        if (StringUtils.isEmpty(keyword))
+        if (StringUtils.isEmpty(keyword)){
             return Result.error();
+        }
         return Result.success(blogRepository.findByTitleLike(keyword));
     }
 
     @GetMapping("/rep/search/title/custom")
     public Result repSearchTitleCustom(String keyword) {
-        if (StringUtils.isEmpty(keyword))
+        if (StringUtils.isEmpty(keyword)){
             return Result.error();
+        }
         return Result.success(blogRepository.findByTitleCustom(keyword));
     }
 

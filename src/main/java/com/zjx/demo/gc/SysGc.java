@@ -5,9 +5,7 @@ import java.util.List;
 
 /**
  * @author: create by zhangjianxun
- * @version: v1.0
- * @description: com.zjx.demo.gc
- * @date:2020/6/18
+ * date:2020/6/18
  **/
 public class SysGc {
 
@@ -24,7 +22,14 @@ public class SysGc {
         byte[] bigObj2 = new byte[1024 * 1024 * 70];
 
     }
-
+    
+    /**
+    * @Description: 创建大对象
+    * @Param: [n]
+    * @return: void
+    * @Author: Create by zhangjianxun
+    * @Date: 2020/11/2
+    */
     private static void createBigObject(int n){
         List<byte[]> bytesList = new ArrayList<>();
         for (int i = 0; i < n; i++) {
