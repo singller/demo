@@ -36,9 +36,8 @@ public class TransactionDemo {
 
 
     public static void main(String[] args) {
-        JedisPool jedisPool = new JedisPool("10.0.1.34", 6379);
+        JedisPool jedisPool = new JedisPool("127.0.0.1", 6379);
         Jedis jedis = jedisPool.getResource();
-        jedis.auth("deThaxi6hesp8paKocheRorLf6AbRAsaxiqoxaquzeswoprar8juvlst7ru0AFro");
         jedis.select(5);
         String userId = "abc";
         String key = keyFor(userId);

@@ -20,7 +20,7 @@ import org.springframework.amqp.core.Queue;
  * @description: com.zjx.demo.mqconfig
  * @date:2020/6/5
  **/
-@Configuration
+//@Configuration
 public class DirectConfig {
 
     @Bean

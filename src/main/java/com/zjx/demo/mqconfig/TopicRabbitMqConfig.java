@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @description: com.zjx.demo.mqconfig
  * @date:2020/6/5
  **/
-@Configuration
+//@Configuration
 public class TopicRabbitMqConfig {
 
 
