@@ -8,6 +8,6 @@ package com.zjx.demo.designMode.proxy.CglibProxy;
  **/
 public class HelloImpl {
     public void say(){
-        System.out.println("cdlib代理");
+        System.out.println("cglib代理");
     }
 }

@@ -23,17 +23,18 @@ public class MyInvocationHandler implements InvocationHandler {
         System.out.println("----------after----------");
         return result;
     }
+
     //目标对象
     private Object target;
 
-    public MyInvocationHandler(Object target){
+    public MyInvocationHandler(Object target) {
         super();
         this.target = target;
     }
 
     //获取代理类
-    public Object getProxy(){
+    public Object getProxy() {
         return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
-                this.target.getClass().getInterfaces(),this);
+                this.target.getClass().getInterfaces(), this);
     }
 }
