@@ -1,10 +1,5 @@
 package com.zjx.demo.leecode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * @author: create by zhangjianxun
  * @version: v1.0
@@ -134,18 +129,54 @@ public class Solution {
 //        String s = "";
 //        int[] ints = twoSum(c, d);
 //        System.out.println(ints);
-        int i = 12321;
-        boolean palindrome = isPalindrome(i);
-        System.out.println(palindrome);
+//        int i = 12321;
+//        boolean palindrome = isPalindrome(i);
+//        System.out.println(palindrome);
+//
+//        int y = 3;
+//
+//        int sum = 0;
+//        sum -= y;
+//        System.out.println(sum);
+//
+//        String[] o = {"c", "c"};
+//        longestCommonPrefix(o);
+        int s = 7;
+        int[] nums = {2, 3, 1, 2, 4, 3};
+        System.out.println(minLength(s, nums));
 
-        int y = 3;
+    }
 
-        int sum = 0;
-        sum -= y;
-        System.out.println(sum);
 
-        String[] o = {"c", "c"};
-        longestCommonPrefix(o);
+    /*给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组。如果不存在符合条件的连续子数组，返回 0。
+    示例:
+    输入: s = 7, nums = [2,3,1,2,4,3]
+    输出: 2
+    解释: 子数组 [4,3] 是该条件下的长度最小的连续子数组。*/
+    public static int minLength(int s, int[] nums) {
+        if (nums.length <= 0) {
+            return 0;
+        }
+        int end = 0;
+        int min = Integer.MAX_VALUE;
+        int sum = nums[0];
+        for (int pos = 0; pos < nums.length; pos++) {
+            while (sum < s) {
+                if (end + 1 < nums.length) {
+                    end++;
+                    sum += nums[end];
+                } else {
+                    break;
+                }
+            }
+            // 找到了区间，计算长度
+            if (sum >= s) {
+                min = ((end - pos + 1) < min) ? (end - pos + 1) : min;
+            }
+            // 左边移动一个位置，继续下一轮
+            sum -= nums[pos];
+        }
+        return min == Integer.MAX_VALUE ? 0 : min;
     }
 
 
