@@ -158,7 +158,7 @@ public class KeyBasedFileProcessor {
 
             inputPath = "C:\\Users\\65454\\Desktop\\fsdownload\\kbank_billpayment_09032021.txt.gpg";
             //被加密的文件    ${channelcode}_${instcode}_ddMMyyyyy.txt
-            outPath = address + "\\kbank_billpayment_09032022.txt";
+            outPath = address + "\\kbank_billpayment_09032023.txt";
             System.out.println("解密第一个文件，要解密的文件：" + inputPath + "，解密出来的文件" + outPath);
             PGPExampleUtil.decryptFile(inputPath, privateKeys, password.toCharArray(), outPath);
 
