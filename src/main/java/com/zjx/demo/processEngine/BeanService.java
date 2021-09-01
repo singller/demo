@@ -30,7 +30,6 @@ public class BeanService implements ApplicationContextAware {
             Object beanByName = getBeanByName(beanName);
             if (Objects.nonNull(beanByName)) {
                 //防止被代理导致拿不到bean
-
                 Object target = AopTargetUtil.getTarget(beanByName);
                 if (clazz.getName().equals(target.getClass().getName())) {
                     return (T) beanByName;

@@ -18,6 +18,7 @@ public class NodeOne implements FlowNodeInterface {
 
     @Override
     public void afterIncode(FlowEngine.RunData nodeData, ProcessEngineContext context) {
+        System.out.println("后置处理" + nodeData.getParamOne());
 
     }
 
