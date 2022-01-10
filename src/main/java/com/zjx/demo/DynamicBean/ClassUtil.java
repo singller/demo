@@ -1,8 +1,6 @@
 package com.zjx.demo.DynamicBean;
 
 
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONUtil;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,14 +14,13 @@ import java.util.*;
 public class ClassUtil {
 
     /**
-     *
-     * @param object   旧的对象带值
-     * @param addMap   动态需要添加的属性和属性类型
-     * @param addValMap  动态需要添加的属性和属性值
-     * @return  新的对象
+     * @param object    旧的对象带值
+     * @param addMap    动态需要添加的属性和属性类型
+     * @param addValMap 动态需要添加的属性和属性值
+     * @return 新的对象
      * @throws Exception
      */
-    public Object dynamicClass(Object object,HashMap addMap, HashMap addValMap) throws Exception {
+    public Object dynamicClass(Object object, HashMap addMap, HashMap addValMap) throws Exception {
         HashMap returnMap = new HashMap();
         HashMap typeMap = new HashMap();
 
@@ -59,14 +56,14 @@ public class ClassUtil {
 
     @Setter
     @Getter
-    public static class Order{
+    public static class Order {
         private int id;
         private String name;
     }
 
     @Setter
     @Getter
-    public static class OrderDetail{
+    public static class OrderDetail {
         private int orderid;
         private String orderPrice;
         private String orderSku;
@@ -99,7 +96,7 @@ public class ClassUtil {
 //            addMap.put("orders",Class.forName("java.lang.String"));
             addValMap.put("orderDetail", orderDetailList);
 
-            Object obj2= new ClassUtil().dynamicClass(order,addMap,addValMap);
+            Object obj2 = new ClassUtil().dynamicClass(order, addMap, addValMap);
 
             System.out.println(obj2);
 

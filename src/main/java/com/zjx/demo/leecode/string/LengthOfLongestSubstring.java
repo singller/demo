@@ -1,6 +1,10 @@
 package com.zjx.demo.leecode.string;
 
+import cn.hutool.json.JSONUtil;
+import com.fasterxml.jackson.annotation.JsonAlias;
+
 import java.util.HashMap;
+import java.util.LinkedList;
 
 /**
  * @author: create by zhangjianxun
@@ -49,7 +53,13 @@ public class LengthOfLongestSubstring {
     public static void main(String[] args) {
         System.out.println(Math.max(9, 4));
         String str = "asdfgaaed";
-        System.out.println(solution(str));
+//        System.out.println(solution(str));
+
+
+        int [] nums = {1,3,-1,-3,5,3,6,7};
+        int key = 3;
+        int[] ints = maxSlidingWindow(nums, key);
+        System.out.println(JSONUtil.toJsonStr(ints));
     }
 
     public static int solution(String s) {
@@ -65,5 +75,33 @@ public class LengthOfLongestSubstring {
         }
 
         return ans;
+    }
+
+
+
+    public static int[] maxSlidingWindow(int[] nums, int k) {
+        int right =0;
+        int[] res = new int[nums.length -k +1];
+        int index=0;
+        LinkedList<Integer> list = new LinkedList<>();
+        // 开始构造窗口
+        while (right < nums.length) {
+            // 这里的list的首位必须是窗口中最大的那位
+            while (!list.isEmpty() && nums[right] > list.peekLast()) {
+                list.removeLast();
+            }
+            // 不断添加
+            list.addLast(nums[right]);
+            right++;
+            // 构造窗口完成，这时候需要根据条件做一些操作
+            if (right >= k){
+                res[index++]=list.peekFirst();
+                // 如果发现第一个已经在窗口外面了，就移除
+                if(list.peekFirst() == nums[right-k]) {
+                    list.removeFirst();
+                }
+            }
+        }
+        return res;
     }
 }

@@ -1,6 +1,9 @@
 package com.zjx.demo.designMode.template;
 
-public class ConcreteClass extends AbstractCalss {
+/**
+ * @author 65454
+ */
+public class ConcreteClass extends AbstractClass {
     @Override
     public void method1() {
         System.out.println("9折具体逻辑实现");

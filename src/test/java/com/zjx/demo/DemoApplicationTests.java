@@ -1,15 +1,18 @@
 package com.zjx.demo;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.TypeReference;
 import com.zjx.demo.base.Kafaka;
 import com.zjx.demo.mqconfig.Customer;
 import com.zjx.demo.mqconfig.Producer;
+import com.zjx.demo.utils.ResourceHelper;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
+import org.powermock.reflect.Whitebox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.DataAccessException;
 import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
@@ -102,18 +105,26 @@ class DemoApplicationTests {
 
     @Test
     public void test02() {
-        SetOperations set = redisTemplate.opsForSet();
 
-        //添加集合d
-        set.add("set-d", "a", "b", "c", "d");
-        //添加集合e
-        set.add("set-e", "c", "d", "e", "f");
-        //添加集合f
-        set.add("set-f", "e", "f", "g", "h");
 
-        //求差集(属于d不属于e和f)
-        Set<String> difference = set.difference("set-d", Arrays.asList("set-e", "set-f"));
-        System.out.println(difference);
+        Long increment = redisTemplate.opsForValue().increment("1232312",200);
+        System.out.println(increment);
+        Long decrement = redisTemplate.opsForValue().decrement("1232312");
+        System.out.println(decrement);
+//        SetOperations set = redisTemplate.opsForSet();
+//
+//        //添加集合d
+//        set.add("set-d", "a", "b", "c", "d","d");
+//        //添加集合e
+//        set.add("set-e", "c", "d", "e", "f");
+//        //添加集合f
+////        set.add("set-f", "e", "f", "g", "h");
+//
+//        //求差集(属于d不属于e和f)
+////        Set<String> difference = set.difference("set-d", Arrays.asList("set-e", "set-f"));
+//        Set difference1 = set.difference("set-d", "set-e");
+//        System.out.println(difference1);
+//        System.out.println(difference);
     }
 
 
@@ -159,6 +170,15 @@ class DemoApplicationTests {
         redisTemplateString.opsForValue().increment(s);
         o = redisTemplateString.opsForValue().get(s);
         System.out.println(o+"------------222");
+    }
+
+   String path = "";
+    @Test
+    public void jsonTest(){
+
+        String text = ResourceHelper.getResourceAsString(getClass(), path + "file/languageMap.json");
+        Map<Long, String> languageMap = JSON.parseObject(text, new TypeReference<Map<Long, String>>() {});
+        Whitebox.setInternalState( "languageMap", languageMap);
     }
 
 
