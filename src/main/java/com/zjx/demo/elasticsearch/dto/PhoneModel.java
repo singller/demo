@@ -17,7 +17,7 @@ import java.util.Date;
  **/
 @Data
 @Accessors(chain = true)
-@Document(indexName = "springboot_elasticsearch_example_phone", type = "com.fengwenyi.springbootelasticsearchexamplephone.model.PhoneModel")
+@Document(indexName = "springboot_elasticsearch_example_phone")
 public class PhoneModel implements Serializable {
     private static final long serialVersionUID = -5087658155687251393L;
 

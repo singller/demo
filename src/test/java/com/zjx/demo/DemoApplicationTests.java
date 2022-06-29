@@ -156,20 +156,20 @@ class DemoApplicationTests {
         String platform = "platformFlow:20210831:scb:payout";
         String channelFlow = "channelFlow:20210831:scb:payout";
 
-//        SetOperations set = redisTemplate.opsForSet();
-//        Set<String> plf = set.difference(platform, channelFlow);
-//        Set<String> org = set.difference(channelFlow, platform);
-//
-//        Set<String> flatSet = set.intersect(platform, channelFlow);
+        SetOperations set = redisTemplate.opsForSet();
+        Set<String> plf = set.difference(platform, channelFlow);
+        Set<String> org = set.difference(channelFlow, platform);
+
+        Set<String> flatSet = set.intersect(platform, channelFlow);
 
         System.out.println();
 
-        String s = "1231234567";
-        String o = redisTemplateString.opsForValue().get(s);
-        System.out.println(o+"------------111");
-        redisTemplateString.opsForValue().increment(s);
-        o = redisTemplateString.opsForValue().get(s);
-        System.out.println(o+"------------222");
+//        String s = "1231234567";
+//        String o = redisTemplateString.opsForValue().get(s);
+//        System.out.println(o+"------------111");
+//        redisTemplateString.opsForValue().increment(s);
+//        o = redisTemplateString.opsForValue().get(s);
+//        System.out.println(o+"------------222");
     }
 
    String path = "";
