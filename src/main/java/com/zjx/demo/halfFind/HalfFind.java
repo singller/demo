@@ -1,7 +1,8 @@
 package com.zjx.demo.halfFind;
 
-/*
+/**
   二分查找法
+ * @author zjx
  */
 public class HalfFind {
 
@@ -9,10 +10,12 @@ public class HalfFind {
         int lo = 0, hi = arrays.length - 1;
         int mid;
         while (lo <= hi) {
-            mid = (lo + hi) / 2;//中间位置
+            //中间位置
+            mid = (lo + hi) / 2;
             if (arrays[mid] == a) {
                 return mid;
-            } else if (a > arrays[mid]) {//在右边
+            //在右边
+            } else if (a > arrays[mid]) {
                 lo = mid;
             } else {//在左边
                 hi = mid;

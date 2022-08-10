@@ -11,7 +11,7 @@ package com.zjx.demo.leecode.linkedNode;
  **/
 public class MiddleLinkedList {
 
-    /*
+    /**
      * @Description    先遍历获取链表长度  再取中点
      * @Param * @param head
      * @Return com.zjx.demo.leecode.linkedNode.ListNode

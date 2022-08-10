@@ -31,20 +31,22 @@ public class ReverseLinked {
 
     }
 
-    /*
+    /**
     递归方法
      * */
     public static ListNode reverseList1(ListNode head) {
-        if (head == null || head.next == null)
+        if (head == null || head.next == null){
             return head;
+        }
         ListNode newNode = reverseList1(head.next);
-        head.next.next = head; //反转
+        //反转
+        head.next.next = head;
         head.next = null;
         return newNode;
     }
 
 
-    /*
+    /**
      * 遍历链表移动
      * */
     public static ListNode reverseList2(ListNode head) {
