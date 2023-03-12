@@ -7,6 +7,7 @@ import org.powermock.reflect.Whitebox;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
+import java.util.Stack;
 
 /**
  * @author 65454
@@ -23,5 +24,10 @@ public class DataSimulation {
             Map<Long, String> languageMap = JSON.parseObject(text, new TypeReference<Map<Long, String>>() {});
             Whitebox.setInternalState( "languageMap", languageMap);
         }
+
+
+    public static void main(String[] args) {
+        Stack stack = new Stack();
+    }
 
 }
