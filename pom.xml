@@ -125,7 +125,7 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>3.12.4</version>
+            <version>3.22.0</version>
         </dependency>
 
         <dependency>
@@ -183,7 +183,7 @@
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
-            <version>3.8.1</version>
+            <version>3.22.0</version>
         </dependency>
         <!-- https://search.maven.org/artifact/com.github.f4b6a3/ulid-creator -->
         <dependency>
